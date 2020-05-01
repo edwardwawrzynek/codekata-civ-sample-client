@@ -27,5 +27,15 @@ class AI() {
             doMoveWorker: (srcPos: Pair<Int, Int>, dstPos: Pair<Int, Int>) -> Unit
     ) {
         // make moves
+
+        // for example, produce a worker on one of our cities if we have enough food
+        if(players[playerIndex].resources[ResourceType.Food]!! >= 8) {
+            doProduce(ProductionType.Worker, players[playerIndex].cities[0].position)
+        }
+
+        // another example: move all armies to the right one unit(why not?)
+        for(army in players[playerIndex].armies) {
+            doMoveArmy(army.position, Pair(army.position.first + 1, army.position.second))
+        }
     }
 }
