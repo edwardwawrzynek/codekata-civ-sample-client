@@ -28,8 +28,8 @@ class AI() {
     ) {
         // make moves
 
-        // for example, produce a worker on one of our cities if we have enough food
-        if(players[playerIndex].resources[ResourceType.Food]!! >= 8) {
+        // for example, produce a worker on one of our cities if we have enough production
+        if(players[playerIndex].resources[ResourceType.Production]!! >= 8) {
             doProduce(ProductionType.Worker, players[playerIndex].cities[0].position)
         }
 

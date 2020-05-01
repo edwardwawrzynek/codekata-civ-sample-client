@@ -64,6 +64,7 @@ class API(val url: String, val key: String) {
         return gson.fromJson(response.body().asString("application/json"), PlayerIndexResponse::class.java)
     }
 
+
     // GET /api/board
     fun getBoard(): BoardResponse {
         val (_, response, _) = "${url}/api/board".httpGet(
