@@ -131,10 +131,10 @@ class Runner(val ai: AI, val apiUrl: String, val apiKey: String) {
                     run.loadRefreshRate()
                     run.sendName()
                     val index = run.getPlayerIndex()
-                    val map = run.getBoard()
                     while(true) {
                         run.waitUntilTurn(index!!)
                         println("Starting Turn")
+                        val map = run.getBoard()
                         val players = run.loadPlayers()
                         run.ai.doMove(map!!, players, index, run::doProduce, run::doTechnology, run::doMoveArmy, run::doMoveWorker)
                         println("Ending turn")
