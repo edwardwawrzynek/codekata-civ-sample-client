@@ -94,24 +94,40 @@ class Runner(val ai: AI, val apiUrl: String, val apiKey: String) {
         }
     }
 
-    fun doProduce(type: ProductionType, location: Pair<Int, Int>) {
+    fun doProduce(type: ProductionType, location: Pair<Int, Int>): Boolean {
         val resp = api.doProduce(type, location)
-        if(resp.error != null) println("Error doing production: ${resp.error}")
+        if(resp.error != null) {
+            println("Error doing production: ${resp.error}")
+            return false
+        }
+        return true
     }
 
-    fun doTechnology(type: TechnologyType) {
+    fun doTechnology(type: TechnologyType): Boolean {
         val resp = api.doTechnology(type)
-        if(resp.error != null) println("Error doing technology: ${resp.error}")
+        if(resp.error != null) {
+            println("Error doing technology: ${resp.error}")
+            return false
+        }
+        return true
     }
 
-    fun doMoveArmy(srcPos: Pair<Int, Int>, dstPos: Pair<Int, Int>) {
+    fun doMoveArmy(srcPos: Pair<Int, Int>, dstPos: Pair<Int, Int>): Boolean {
         val resp = api.doMoveArmy(srcPos, dstPos)
-        if(resp.error != null) println("Error moving army: ${resp.error}")
+        if(resp.error != null) {
+            println("Error moving army: ${resp.error}")
+            return false
+        }
+        return true
     }
 
-    fun doMoveWorker(srcPos: Pair<Int, Int>, dstPos: Pair<Int, Int>) {
+    fun doMoveWorker(srcPos: Pair<Int, Int>, dstPos: Pair<Int, Int>): Boolean {
         val resp = api.doMoveWorker(srcPos, dstPos)
-        if(resp.error != null) println("Error moving worker: ${resp.error}")
+        if(resp.error != null) {
+            println("Error moving worker: ${resp.error}")
+            return false
+        }
+        return true
     }
 
     companion object {

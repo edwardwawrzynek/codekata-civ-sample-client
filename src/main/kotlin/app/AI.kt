@@ -21,10 +21,10 @@ class AI() {
             map: GameMap,
             players: List<Player>,
             playerIndex: Int,
-            doProduce: (type: ProductionType, location: Pair<Int, Int>) -> Unit,
-            doTechnology: (type: TechnologyType) -> Unit,
-            doMoveArmy: (srcPos: Pair<Int, Int>, dstPos: Pair<Int, Int>) -> Unit,
-            doMoveWorker: (srcPos: Pair<Int, Int>, dstPos: Pair<Int, Int>) -> Unit
+            doProduce: (type: ProductionType, location: Pair<Int, Int>) -> Boolean,
+            doTechnology: (type: TechnologyType) -> Boolean,
+            doMoveArmy: (srcPos: Pair<Int, Int>, dstPos: Pair<Int, Int>) -> Boolean,
+            doMoveWorker: (srcPos: Pair<Int, Int>, dstPos: Pair<Int, Int>) -> Boolean
     ) {
         // make moves
 
